@@ -1,6 +1,6 @@
 package dev.pp.gifty.services;
 
-import dev.pp.gifty.Category;
+import dev.pp.gifty.entities.Category;
 import dev.pp.gifty.repositories.CategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.apache.logging.log4j.LogManager;

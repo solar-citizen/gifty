@@ -1,6 +1,6 @@
 package dev.pp.gifty.repositories;
 
-import dev.pp.gifty.Gift;
+import dev.pp.gifty.entities.Gift;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

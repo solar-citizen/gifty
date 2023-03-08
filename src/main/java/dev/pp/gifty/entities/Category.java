@@ -1,4 +1,4 @@
-package dev.pp.gifty;
+package dev.pp.gifty.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
