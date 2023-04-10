@@ -29,8 +29,8 @@ public class CategoryService {
     }
 
 //    public Optional<Category> createCategory(Category category) {
-    public Optional<Category> createCategory(String name) {
-        Category category = new Category(name);
+    public Optional<Category> createCategory(String name, String description) {
+        Category category = new Category(name, description);
 
         try {
             categoryRepository.save(category);

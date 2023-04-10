@@ -12,15 +12,19 @@ public class Category {
 
     @Id
     @Column(columnDefinition = "integer")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "categoriesIdSequence", sequenceName = "categories_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "categories_generator")
+    @SequenceGenerator(name = "categories_generator", sequenceName = "categories_seq", allocationSize = 1)
     private Long id;
 
     @Column(columnDefinition = "text")
     private String name;
 
-    public Category(String name) {
+    @Column(columnDefinition = "text")
+    private String description;
+
+    public Category(String name, String description) {
         this.name = name;
+        this.description = description;
     }
 
     public Category() {

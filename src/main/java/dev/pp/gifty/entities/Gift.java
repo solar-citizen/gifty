@@ -14,8 +14,8 @@ public class Gift {
 
     @Id
     @Column(columnDefinition = "integer")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "giftsIdSequence", sequenceName = "gifts_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gifts_generator")
+    @SequenceGenerator(name = "gifts_generator", sequenceName = "gifts_seq", allocationSize = 1)
     private Long id;
 
     @Column(columnDefinition = "text")
