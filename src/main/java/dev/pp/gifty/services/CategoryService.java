@@ -28,10 +28,7 @@ public class CategoryService {
                 .orElseThrow(() -> new EntityNotFoundException("Category not found with id " + categoryId)));
     }
 
-//    public Optional<Category> createCategory(Category category) {
-    public Optional<Category> createCategory(String name, String description) {
-        Category category = new Category(name, description);
-
+    public Optional<Category> createCategory(Category category) {
         try {
             categoryRepository.save(category);
         } catch (Exception e) {     //---> DataAccessException ?

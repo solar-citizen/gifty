@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -29,8 +28,8 @@ public class CategoryController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Optional<Category>> addCategory(@RequestBody Map<String, String> payload) {
-        return new ResponseEntity<>(categoryService.createCategory(payload.get("categoryName"), payload.get("categoryDescription")), HttpStatus.CREATED);
+    public ResponseEntity<Optional<Category>> addCategory(@RequestBody Category category) {
+        return new ResponseEntity<>(categoryService.createCategory(category), HttpStatus.CREATED);
     }
 
 }
