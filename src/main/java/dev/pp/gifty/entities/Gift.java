@@ -12,6 +12,14 @@ import java.util.List;
 @Table(name = "gifts")
 public class Gift {
 
+    public Gift() {}
+
+    public Gift(Long id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
     @Id
     @Column(columnDefinition = "integer")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gifts_generator")
@@ -21,12 +29,15 @@ public class Gift {
     @Column(columnDefinition = "text")
     private String name;
 
-    @Transient
-    private List<Category> categories;
+    @Column(columnDefinition = "text")
+    private String description;
 
-    public Gift() {
-        // Entity.
-    }
+    @Transient
+    @ManyToMany
+    @JoinTable(name = "gift_categories",
+               joinColumns = @JoinColumn(name = "gift_id"),
+               inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private List<Category> categories;
 
     public Long getId() {
         return id;
@@ -51,4 +62,13 @@ public class Gift {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }

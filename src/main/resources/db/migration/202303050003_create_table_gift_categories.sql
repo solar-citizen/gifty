@@ -1,0 +1,13 @@
+-- DROP TABLE IF EXISTS gift_categories;
+-- DROP SEQUENCE IF EXISTS gift_categories_seq;
+--
+-- CREATE TABLE IF NOT EXISTS gift_categories (
+--     gift_id INTEGER NOT NULL,
+--     category_id INTEGER NOT NULL,
+--     PRIMARY KEY (gift_id, category_id),
+-- --     FOREIGN KEY (gift_id) REFERENCES gifts(id),
+-- --     FOREIGN KEY (category_id) REFERENCES categories(id)
+-- );
+
+-- CREATE SEQUENCE IF NOT EXISTS gift_categories_seq START WITH 1 INCREMENT BY 1;
+-- ALTER SEQUENCE gift_categories_seq INCREMENT BY 1;

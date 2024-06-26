@@ -1,20 +1,24 @@
 package dev.pp.gifty.services;
 
 import dev.pp.gifty.entities.Gift;
-import dev.pp.gifty.repositories.GiftRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class GiftService {
+public interface GiftService {
 
-    @Autowired
-    private GiftRepository giftRepository;
+    Optional<List<Gift>> getAllGifts();
 
-    public List<Gift> allGifts() {
-        return giftRepository.findAll();
-    }
+    Optional<Gift> getGiftById(Long id);
+
+    Optional<Gift> createGift(Gift gift);
+
+    Optional<Gift> updateGift(Gift gift);
+
+    void deleteGift(Long id);
+
+    List<Gift> getBestFitGifts(String[] selectedCategories, Integer numGifts);
 
 }
